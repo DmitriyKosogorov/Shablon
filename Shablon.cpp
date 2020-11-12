@@ -16,11 +16,13 @@ int main(void)
 		cout << list[i]<<endl;
 	cout <<endl<< list.getFinish()->getData();
 	*/
-	int i, n = 50;
+	int i, n;
+	cout << "Enter the number of people"<<endl;
+	cin >> n;
 	LineList<int> list;// Указываем, список какого типа
 	list.insertFirst(1);	
 	LineListElem<int>* ptr = list.getStart();
-	for (i = 1; i < n - 1; i++)
+	for (i = 1; i < n; i++)
 	{
 		list.insertAfter(ptr, i + 1);
 		ptr = ptr->getNext();
@@ -31,7 +33,6 @@ int main(void)
 		ptr = ptr->getNext()->getNext();
 		list.deleteAfter(ptr);
 	}
-	cout << "";
-	cout << list.getFinish()->getData();
+	cout << "if every third would die, than in the end stills alive number "<<(list.getFinish()->getData());
 	return 0;
 }
